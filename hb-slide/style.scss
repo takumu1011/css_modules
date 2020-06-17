@@ -54,6 +54,7 @@ body {
     text-decoration: none;
   }
   &__btn {
+    position: relative;
     background-color: unset;
     border: none;
     outline: none;
@@ -64,6 +65,7 @@ body {
       height: 2px;
       display: block;
       margin-bottom: 9px;
+      transition: transform 0.7s;
       &:last-child {
         margin-bottom: 0;
       }
@@ -89,6 +91,20 @@ body {
     &__cover {
       opacity: 1;
       visibility: visible;
+    }
+    &__btn {
+      & > span {
+        background-color: $cWhite;
+        &:nth-child(1) {
+          transform: translateY(11px) rotate(135deg);
+        }
+        &:nth-child(2) {
+          transform: translateX(-18px) scaleX(0);
+        }
+        &:nth-child(3) {
+          transform: translateY(-11px) rotate(-135deg);
+        }
+      }
     }
     &__item {
       transform: none;
